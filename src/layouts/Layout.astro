@@ -1,0 +1,31 @@
+---
+//asi todo los que utilicen este componente tendra la configuracion de Layout .css
+import '../styles/Layout.css'
+import Footer from '../components/footer.astro'
+// sintaxis de typescript
+interface Props {
+    title: string;
+}
+
+const {title}= Astro.props as Props;
+
+---
+
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Landing - {title}</title>
+</head>
+<body>
+   <!-- Comentario en el cuerpo del HTML -->
+   <!--la etiqueta slot me dice que aqui viene el contenido -->
+   <main class="mx-auto container ">
+    <slot/>
+    <Footer/>
+   </main>
+    
+</body>
+</html>
